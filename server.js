@@ -29,10 +29,7 @@ app.use(function (req, res, next) {
 
 app.listen(process.env.PORT || 3000, function () {
 
-    var host = server.address().address
-    var port = server.address().port
-
-    console.log("Example app listening at http://%s:%s", host, port)
+    console.log("You are running our web service!")
 
 });
 
