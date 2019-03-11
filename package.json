@@ -2,7 +2,7 @@
   "name": "nodejsapifirebase",
   "version": "1.0.0",
   "description": "A web service call Firebase Database",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "npm start"
   },
