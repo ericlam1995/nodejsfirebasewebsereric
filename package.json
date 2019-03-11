@@ -1,0 +1,24 @@
+{
+  "name": "nodejsapifirebase",
+  "version": "1.0.0",
+  "description": "A web service call Firebase Database",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericlam1995/nodejsfirebasewebsereric.git"
+  },
+  "author": "Eric Lam (Thi Vinh Lam)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericlam1995/nodejsfirebasewebsereric/issues"
+  },
+  "homepage": "https://github.com/ericlam1995/nodejsfirebasewebsereric#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "firebase-admin": "^7.0.0"
+  }
+}
