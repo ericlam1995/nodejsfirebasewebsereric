@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const admin = require('firebase-admin');
 const firebase = require('firebase');
+const fs = require('fs');
 const serviceAccount = require('./json/apitest-10c95-firebase-adminsdk-wj78o-a9a8664d78.json');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -16,17 +17,6 @@ admin.initializeApp({
 
 const db = admin.firestore();
 
-// var config = {
-//     apiKey: "AIzaSyC3gpPK6hw4VxTyRyMjE7zAcWWU7rYtCjM",
-//     authDomain: "apitest-10c95.firebaseapp.com",
-//     databaseURL: "https://apitest-10c95.firebaseio.com",
-//     projectId: "apitest-10c95",
-//     storageBucket: "apitest-10c95.appspot.com",
-//     messagingSenderId: "305978769017"
-// };
-
-
-// firebase.initializeApp(config);
 
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -46,7 +36,11 @@ var server = app.listen(3000, "127.0.0.1", function () {
 });
 
 app.get('/', function (req, res) {
-    res.end(JSON.stringify("Hello, Welcome to Firebase API."));
+    fs.readFile('index.html', function (err, data) {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.write(data);
+        res.end();
+      });
 });
 
 app.get('/taxibookingrequest', function (req, res) {
