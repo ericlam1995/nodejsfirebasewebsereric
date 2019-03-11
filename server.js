@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const admin = require('firebase-admin');
 const firebase = require('firebase');
 const fs = require('fs');
+const path = require('path');
 const serviceAccount = require('./json/apitest-10c95-firebase-adminsdk-wj78o-a9a8664d78.json');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -36,11 +37,7 @@ var server = app.listen(3000, "127.0.0.1", function () {
 });
 
 app.get('/', function (req, res) {
-    fs.readFile('index.html', function (err, data) {
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.write(data);
-        res.end();
-      });
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get('/taxibookingrequest', function (req, res) {
